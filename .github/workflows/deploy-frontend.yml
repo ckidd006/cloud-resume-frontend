@@ -1,0 +1,28 @@
+name: Deploy Frontend to S3
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+
+      - name: Sync files to S3
+        run: aws s3 sync . s3://ckiddresume.com
+
+      - name: Invalidate CloudFront cache (optional)
+        run: aws cloudfront create-invalidation --distribution-id E1FGYIV9B0JF92 --paths "/*"
+        continue-on-error: true   # if no CloudFront yet, this step won't fail the whole job
