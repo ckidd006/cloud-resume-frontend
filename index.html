@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Kidd Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+    <h1>Christian Kidd</h1>
+    
+    
+<div style="
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.2;
+  margin-top: 16px;
+">
+  <div>
+    Virginia, USA | Christian.kidd25@gmail.com | linkedin.com/in/christiankidd25 | ckiddresume.com |
+  </div>
+  <div>
+  | 734-546-2635 |
+  </div>
+</div>
+
+
+
+
+    
+    <hr style="margin: 20px auto; width: 80%; border: 1px solid #ccc;"> <!-- optional subtle line under name -->
+
+    <h3>Summary</h3>  
+    
+    <p>
+        CompTIA Security+ certified with hands-on experience in cloud computing, pen testing on Linux/Windows,
+        firewall configuration, networking basics, Python, risk management, vulnerability assessment,
+        threat detection, incident response, and cyber policy.
+    </p>
+</div>
+        <hr>
+        <section class="skills">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>skills</h3>
+                </div>
+            <div class="grid-item">
+                    <ul>
+                        <li>Analytical Problem-Solving/Troubleshooting</li>
+                        <li>Quick Learner</li>
+                        <li>Team Leadership & Training</li>
+                        <li>Attention to Detail</li>
+                        <li>Protocol & Policy Adherence</li>
+                        <li>Risk Identification</li>
+                    </ul>
+                </div>
+                </div>
+        </section>
+        <hr>
+        <section class="education">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>education</h3>
+                </div>
+            <div class="grid-item">
+                    <h4>
+                        Major in Cybersecurity
+                    </h4>
+
+                    <p>Bachelor of science, Major in Cybersecurity Old Dominion University
+                       Norfolk, VA | 2022 - 2026
+                    </p>
+                    <p>GPA: 3.0</p>
+                </div>
+                </div>
+        </section>
+        <hr>
+<section class="certifications">
+    <div class="grid-container">
+        <div class="grid-item">
+            <h3>certifications</h3>
+        </div>
+        <div class="grid-item">
+            <h4>
+                <li>CompTIA Security+ | 2025 - 2028</li>
+            </h4>
+            <p></p>
+            <h4>
+                <li>Cloud Practitioner | (In Progress)</li>
+            </h4>
+        </div>
+    </div>
+</section>
+        <hr>
+        <section class="experience">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>experience</h3>
+                </div>
+            <div class="grid-item">
+                    <h4>
+                        Hotel Supervisor
+                    </h4>
+                    <b>Founders Inn & Spa 2025 - Current</b>
+                    <li>Supervise team of 3–5 in high-volume operations, training staff on
+standardized procedures and tools to ensure consistent execution and
+reduce errors</li>
+                    <li>Troubleshoot Wi-Fi connectivity, audio-visual systems, and conference
+technology during event setups, diagnosing and resolving issues under tight
+deadlines to maintain operational availability.</li>
+<li>Conduct regular inspections and inventory audits of equipment</li>
+<li>Coordinate rapid response to urgent setup requests, prioritizing tasks in a
+fast-paced environment while adhering to safety and privacy protocols.</li>
+<p>
+
+</p>
+<h4>Lead Set-up</h4>
+<b>Delta Marriot 2022 - Present</b>
+<li>Configured and tested Wi-Fi networks, AV equipment, and conference
+technology for guest events, performing basic diagnostics to resolve
+connectivity and hardware issues quickly.</li>
+<li>Managed access to keycard-restricted guest rooms and secure areas,
+following strict protocols to protect privacy and prevent unauthorized
+entry.</li>
+<li>Collaborated with teams to execute daily setups efficiently, documenting
+completed tasks and reporting any equipment anomalies for maintenance.</li>
+                </div>
+                </div>
+        </section>
+        <hr>
+        <section class="available-to-relocate">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>Available to Relocate</h3>
+                </div>
+                <div class="grid-item">
+
+                      <p style="text-align: right; margin: 0; padding-top: 8px; font-size: 1rem; color: #555;">
+                        Page views: <span id="view-count">Loading...</span>
+                    </p>
+                    
+                </div>
+            </div>
+
+<p style="text-align: center; font-size: 0.85rem; color: #888; margin: 10px 0;">
+            © 2026 Christian Kidd
+             </p>
+
+        </section>
+    </div>
+</body>
+</html>
+
+
+
+<script>
+  const apiUrl = 'https://tw10x8l03i.execute-api.us-east-1.amazonaws.com/Prod/count';
+
+  async function getViewCount() {
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-cache'
+      });
+
+      if (!response.ok) {
+        throw new Error(`Fetch failed with status ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      // The new endpoint returns { "views": number }
+      document.getElementById('view-count').innerText = data.views;
+
+    } catch (error) {
+      console.error('Error fetching visitor count:', error);
+      document.getElementById('view-count').innerText = 'Error';
+    }
+  }
+
+  // Run when page loads
+  window.addEventListener('load', getViewCount);
+
+  // Optional: Refresh every 30 seconds to show live updates (if multiple people viewing)
+  // setInterval(getViewCount, 30000);
+</script>
